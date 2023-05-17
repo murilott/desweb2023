@@ -1,0 +1,60 @@
+.container {
+    background-color: black;
+    border: 3px solid;
+    width: 300px;
+    height: 200px;
+}
+
+div {
+    border: 2px dotted;
+    background-color: lightgray;
+}
+
+.container > div:nth-child(2n) {
+    background-color: yellow;
+}
+
+.container > div {
+    float: right;
+}
+
+.div1 {
+    height: 50px;
+    width: 100px;
+    border: 1px solid;
+}
+
+.div2 {
+    height: 40px;
+    width: 65px;
+    border: 1px solid;
+}
+
+.div3 {
+    height: 45px;
+    width: 50px;
+    border: 1px solid;
+}
+
+.div4 {
+    height: 60px;
+    width: 100px;
+}
+
+.div5 {
+    height: 20px;
+    width: 45px;
+}
+
+.div6 {
+    height: 30px;
+    width: 50px;
+}
+
+span {
+    background-color: yellow;
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+}
+
