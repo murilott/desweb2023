@@ -1,0 +1,21 @@
+div {
+    width: 360px;
+    padding: 10px 20px;
+    border: 2px solid;
+}
+
+p {
+    border: 2px dotted;
+    padding: 10px 20px;
+}
+
+.tres {
+    background-color: #ddd;
+    position: sticky;
+    top: 100px;
+    left: 100px;
+}
+
+.container {
+    position: relative;
+}
