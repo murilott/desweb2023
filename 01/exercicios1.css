@@ -1,0 +1,25 @@
+.container {
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 150px;
+}
+
+.outros {
+    display: flex;
+    flex-direction: row;
+}
+
+.barra {
+    width: 500px;
+    height: 50px;
+    border: 1px dotted;
+}
+
+.outros > div {
+    border: 1px dotted;
+    padding: 15px;
+}
