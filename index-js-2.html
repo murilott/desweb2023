@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS</title>
+    </head>
+    <body>
+        <h1>Olá JS</h1>
+        <button type="button" onclick="botao1()">Sou um botão</button>
+        <br>
+        <button type="button" onclick="elementWrite()">Sou um botão 0</button>
+        <br>
+        <button type="button" onclick="botao2()">Sou um botão 2</button>
+        <br>
+        <br>
+        <input id="inp1">
+        <button type="button" onclick="inp1()">Veja o que escreveu ao lado:</button>
+        <p id="p1">Olá Dr.</p>
+        <br>
+        <br>
+        <button type="button" onclick="chamar_api()">Pegar imagem</button>
+        <img src="" alt="" id="img">
+        <br>
+        <br>
+        <button type="button" onclick="testAPI()">Pegar imagem :3</button>
+        <img src="" alt="" id="img">
+
+        <button type="button" onclick="consultar_todas_as_racas_api();">Consultar todas as raças</button>
+        <br>
+        <div id="lista" />
+
+    
+    </body>
+
+    <script>
+        //alert('Alô diabo')
+    function testAPI() {
+        fetch('https://nekos.best/api/v2/neko')
+        .then(response => response.json())
+        .then(json => console.log(json.results[0].url))
+
+        // https://nekos.best/api/v2/neko/XXXXXX-XXXXX.png
+    }
+
+
+    function exibir_imagemA(data){
+        document.getElementById("img").src = data.message;
+    }
+    
+    function consultar_todas_as_racas_api(){
+        fetch('https://dog.ceo/api/breeds/list/all')
+        .then(response => response.json())
+        .then(data =>  exibir_todas_as_racas(data));
+    }
+
+        function exibir_todas_as_racas(data){
+            const div = document.getElementById("lista");
+            div.innerHTML = "";
+            Object.keys(data.message).forEach(key => {
+                console.log(key, data[key]);
+            var div = document.getElementById("lista");
+            const paragrafo = document.createElement("p");
+            const texto = document.createTextNode(key);
+            paragrafo.appendChild(texto);
+            div.appendChild(paragrafo);
+            });
+        }
+
+        function chamar_api(){
+            fetch('https://dog.ceo/api/breeds/image/random')
+            .then(response => response.json())
+            .then(data => exibir_imagem(data));
+        }
+
+        function exibir_imagem(data){
+            document.getElementById("img").src = data.message;
+        }
+
+        function inp1() {
+            let texto = document.getElementById("inp1").value;
+            alert(texto);
+        }
+
+        function botao1() {
+            // var resp = confirm("Você está certo disso, dr. Picarola?");
+            var resp = prompt("Você está certo disso, dr. Picarola?");
+            alert(resp);
+        }
+
+        function botao2() {
+            const element = document.getElementById("p1")
+            element.innerHTML = "OLÁ"
+        }
+
+        function elementWrite() {
+            window.document.write("VOCÊ ESTÁ CERTO DISSO, DR. PICAROLA?");
+            document.write("SIM, ");
+        }
+    </script>
+</html>
